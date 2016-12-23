@@ -1,1 +1,1 @@
-puppet apply --debug --modulepath modules site.pp
+puppet apply --modulepath modules $@ site.pp
