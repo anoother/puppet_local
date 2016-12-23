@@ -11,4 +11,5 @@ forge "https://forgeapi.puppetlabs.com"
 
 # A module from git
 mod 'ahmad-desktop',
-  :git => '/home/ahmad/projects/puppet/modules/ahmad-desktop'
+  :path => 'local_modules/ahmad-desktop'
+
