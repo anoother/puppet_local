@@ -59,7 +59,6 @@ class desktop {
       'wkhtmltopdf', # For pandoc
       'lm-sensors',
       'puppet-lint',
-      'steam',
       'chromium-browser',
       'audacity',
     ]:
