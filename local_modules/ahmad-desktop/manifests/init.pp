@@ -66,4 +66,15 @@ class desktop {
       require => Exec['apt_update'],
   }
 
+  file { '/usr/share/applications/ubuntu-amazon-default.desktop':
+    ensure => absent,
+  }
+
+  package { [
+    'apport-gtk',
+    'apport-kde',
+  ]:
+    ensure => purged,
+  }
+
 }
