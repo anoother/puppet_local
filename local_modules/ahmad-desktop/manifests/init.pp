@@ -3,6 +3,7 @@ class desktop {
   require apt
 
   include desktop::fwupd
+  include desktop::google
 
   apt::ppa {
     [
@@ -40,23 +41,6 @@ class desktop {
     },
   }
 
-  define google_apt_source() {
-    apt::source { $name:
-      location     => "http://dl.google.com/linux/${name}/deb/",
-      repos        => 'main',
-      release      => 'stable',
-      architecture => 'amd64',
-      include      => {
-        'deb' => true,
-        'src' => false,
-      },
-      key          => {
-        'id' => '4CCA1EAF950CEE4AB83976DCA040830F7FAC5991',
-      },
-    }
-  }
-  google_apt_source { ['chrome', 'chrome-remote-desktop', ]: }
-
   package {
     [
       'xmonad',
@@ -76,9 +60,7 @@ class desktop {
       'lm-sensors',
       'puppet-lint',
       'steam',
-      'google-chrome-stable',
       'chromium-browser',
-      'chrome-remote-desktop',
       'audacity',
     ]:
       ensure  => present,
