@@ -48,7 +48,6 @@ class desktop {
       'htop',
       'stow',
       'tree',
-      'dmenu',
       'dzen2',
       'git',
       'virtualenvwrapper',
