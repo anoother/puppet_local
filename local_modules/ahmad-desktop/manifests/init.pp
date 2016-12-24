@@ -14,10 +14,11 @@ class desktop {
       'virtualenvwrapper',
       'dcfldd',
       'tig',
-      'vim-enhanced',
+      'vim',
       'pandoc',
-      'texlive-fonts', # For pandoc
+      'texlive-fonts-recommended', # For pandoc
       'wkhtmltopdf', # For pandoc
+      'lm-sensors',
     ]: ensure => installed
   }
 
