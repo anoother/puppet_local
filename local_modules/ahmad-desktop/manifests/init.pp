@@ -1,6 +1,17 @@
 class desktop {
 
+  require apt
+
   include desktop::fwupd
+
+  apt::ppa {
+    [
+      'ppa:audacity-team/daily',
+      'ppa:hda-me/qt5ct',
+      'ppa:scribus/ppa',
+      'ppa:thomas-schiex/blender',
+    ]:
+  }
 
   package {
     [
@@ -19,7 +30,7 @@ class desktop {
       'texlive-fonts-recommended', # For pandoc
       'wkhtmltopdf', # For pandoc
       'lm-sensors',
-    ]: ensure => installed
+    ]: ensure => present
   }
 
 }
