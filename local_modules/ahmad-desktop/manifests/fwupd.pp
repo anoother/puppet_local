@@ -7,7 +7,7 @@ class desktop::fwupd {
 
   file { '/var/lib/fwupd':
     ensure => absent,
-    force => true,
+    force  => true,
   }
 
 }
