@@ -4,6 +4,7 @@ class desktop {
 
   include desktop::fwupd
   include desktop::google
+  include desktop::xorg
 
   apt::ppa {
     [
