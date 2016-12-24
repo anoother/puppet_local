@@ -44,23 +44,23 @@ class desktop {
 
   package {
     [
-      'xmonad',
-      'htop',
-      'stow',
-      'tree',
+      'audacity',
+      'chromium-browser',
+      'dcfldd',
       'dzen2',
       'git',
-      'virtualenvwrapper',
-      'dcfldd',
-      'tig',
-      'vim',
-      'pandoc',
-      'texlive-fonts-recommended', # For pandoc
-      'wkhtmltopdf', # For pandoc
+      'htop',
       'lm-sensors',
+      'pandoc',
       'puppet-lint',
-      'chromium-browser',
-      'audacity',
+      'stow',
+      'texlive-fonts-recommended', # For pandoc
+      'tig',
+      'tree',
+      'vim',
+      'virtualenvwrapper',
+      'wkhtmltopdf', # For pandoc
+      'xmonad',
     ]:
       ensure  => present,
       require => Exec['apt_update'],
