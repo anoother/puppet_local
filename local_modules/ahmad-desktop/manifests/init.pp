@@ -76,7 +76,13 @@ class desktop {
       'lm-sensors',
       'puppet-lint',
       'steam',
-    ]: ensure => present
+      'google-chrome-stable',
+      'chromium-browser',
+      'chrome-remote-desktop',
+      'audacity',
+    ]:
+      ensure  => present,
+      require => Exec['apt_update'],
   }
 
 }
