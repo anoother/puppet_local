@@ -36,6 +36,28 @@ class desktop::packages {
     },
   }
 
+  apt::source { 'vivaldi':
+    location => 'http://repo.vivaldi.com/stable/deb',
+    repos    => 'main',
+    release  => 'stable',
+    include  => {
+      'deb' => true,
+      'src' => false,
+    },
+    key      => {
+      'id'     => 'CBAD9CC076BDAF25B2809096CEC384A8BF1700F8',
+      'source' => 'http://repo.vivaldi.com/stable/vivaldi_signing_key.pub',
+    }
+  } ->
+
+  package {[
+    'vivaldi-stable',
+    'vivaldi-snapshot',
+  ]:
+      ensure  => present,
+      require => Exec['apt_update'],
+  }
+
   package {
     [
       'audacity',
