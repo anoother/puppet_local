@@ -67,10 +67,10 @@ class desktop {
       require => Exec['apt_update'],
   }
 
-  file { '/etc/NetworkManager/NetworkManager.conf':
-    source => "puppet:///modules/${name}/NetworkManager.conf",
-    owner  => 'root',
-    group  => 'root',
+  file_line { 'disable_dns_proxy':
+    path   => '/etc/NetworkManager/NetworkManager.conf',
+    line   => 'dns=dnsmasq',
+    ensure => 'absent',
   }
 
   file { '/usr/share/applications/ubuntu-amazon-default.desktop':
