@@ -4,6 +4,7 @@ class desktop {
 
   include desktop::fix_ubuntu
   include desktop::google
+  include desktop::hardware
   include desktop::packages
   include desktop::xorg
 

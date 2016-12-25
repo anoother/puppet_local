@@ -68,11 +68,9 @@ class desktop::packages {
       'git',
       'herbstluftwm',
       'htop',
-      'lm-sensors',
       'meld',
       'network-manager-openconnect-gnome',
       'pandoc',
-      'powertop',
       'puppet-lint',
       'stow',
       'texlive-fonts-recommended', # For pandoc
