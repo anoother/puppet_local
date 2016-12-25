@@ -61,14 +61,18 @@ class desktop::packages {
   package {
     [
       'audacity',
+      'blender',
       'chromium-browser',
       'dcfldd',
       'dzen2',
       'git',
+      'herbstluftwm',
       'htop',
       'lm-sensors',
+      'meld',
       'network-manager-openconnect-gnome',
       'pandoc',
+      'powertop',
       'puppet-lint',
       'stow',
       'texlive-fonts-recommended', # For pandoc

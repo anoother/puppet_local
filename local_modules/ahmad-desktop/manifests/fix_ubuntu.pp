@@ -30,4 +30,14 @@ class desktop::fix_ubuntu {
     ensure => purged,
   }
 
+  # Remove Ubuntu Software Centre
+  package { 'ubuntu-software': ensure => absent }
+
+  # Disable thermald
+  service { 'thermald':
+    provider => 'systemd',
+    ensure   => stopped,
+    enable   => false,
+  }
+
 }
