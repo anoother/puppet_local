@@ -51,6 +51,7 @@ class desktop {
       'git',
       'htop',
       'lm-sensors',
+      'network-manager-openconnect-gnome',
       'pandoc',
       'puppet-lint',
       'stow',
@@ -64,6 +65,12 @@ class desktop {
     ]:
       ensure  => present,
       require => Exec['apt_update'],
+  }
+
+  file { '/etc/NetworkManager/NetworkManager.conf':
+    source => "puppet:///modules/${name}/NetworkManager.conf",
+    owner  => 'root',
+    group  => 'root',
   }
 
   file { '/usr/share/applications/ubuntu-amazon-default.desktop':
