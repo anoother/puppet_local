@@ -23,15 +23,10 @@ class desktop::fix_ubuntu {
   }
 
   # Disable crash reporter
-  package { [
-    'apport-gtk',
-    'apport-kde',
-  ]:
-    ensure => purged,
-  }
+  package { 'apport': ensure => purged }
 
   # Remove Ubuntu Software Centre
-  package { 'ubuntu-software': ensure => absent }
+  package { 'ubuntu-software': ensure => purged }
 
   # Disable thermald
   service { 'thermald':
