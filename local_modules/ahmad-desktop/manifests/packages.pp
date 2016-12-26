@@ -68,6 +68,7 @@ class desktop::packages {
       'git',
       'herbstluftwm',
       'htop',
+      'jsonlint',
       'meld',
       'network-manager-openconnect-gnome',
       'pandoc',
