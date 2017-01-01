@@ -4,6 +4,7 @@ class desktop::packages {
     [
       'ppa:audacity-team/daily',
       'ppa:hda-me/qt5ct',
+      'ppa:pmjdebruijn/darktable-release',
       'ppa:scribus/ppa',
       'ppa:thomas-schiex/blender',
     ]:
@@ -62,24 +63,37 @@ class desktop::packages {
     [
       'audacity',
       'blender',
+      'build-essential',
       'chromium-browser',
+      'darktable',
       'dcfldd',
       'dzen2',
+      'gimp',
+      'gimp-gmic',
       'git',
       'herbstluftwm',
       'htop',
-      'jsonlint',
+      'libffi-dev',
+      'libssl-dev',
+      'libxml2-dev',
+      'libxslt1-dev',
       'meld',
       'network-manager-openconnect-gnome',
       'pandoc',
+      'python-demjson', # jsonlint-py
+      'python-dev',
       'puppet-lint',
       'stow',
       'texlive-fonts-recommended', # For pandoc
       'tig',
       'tree',
+      'unison',
+      'vagrant',
+      'vagrant-lxc',
       'vim',
       'virtualenvwrapper',
       'wkhtmltopdf', # For pandoc
+      'xclip',
       'xmonad',
     ]:
       ensure  => present,
