@@ -1,1 +1,2 @@
 include desktop
+include opal

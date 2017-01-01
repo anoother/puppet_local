@@ -1,0 +1,14 @@
+{
+  "name": "ahmad-opal",
+  "version": "0.0.1",
+  "author": "ahmad",
+  "summary": "Enables support for OPAL-compliant self-encrypting drives (SEDs) using sedutil",
+  "license": "MIT",
+  "source": "nowhere",
+  "project_page": "nowhere",
+  "issues_url": "nowhere",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
