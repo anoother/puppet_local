@@ -35,7 +35,58 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
+
 class opal {
 
+  ## None of this works :(
+
+  #$sysfs_allowtpm = '/sys/module/libata/parameters/allow_tpm'
+
+  #exec {"chmod 644 ${sysfs_allowtpm}":
+  #  unless   => "[ $(cat ${sysfs_allowtpm}) -eq 1 ]",
+  #  provider  => shell
+  #} ~>
+
+  #exec {"echo 1 > ${sysfs_allowtpm}":
+  #  provider    => shell,
+  #  refreshonly => true
+  #}
+
+  #file { '/etc/modprobe.d/tpm.conf':
+  #  content => "options libata allow_tpm=1\n"
+  #}
+
+  file_line { 'allow_tpm':
+    path => '/etc/default/grub',
+    line => 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT libata.allow_tpm=1"'
+  } ~>
+  exec { '/usr/sbin/update-grub':  refreshonly => true } ~>
+  exec { '/usr/sbin/grub-install': refreshonly => true}
+
+  $sedutil_archive = 'sedutil_LINUX.tgz'
+  $sedutil_url = 'https://github.com/Drive-Trust-Alliance/exec/blob/master'
+  $sedutil_install_path = '/usr/local/sbin'
+
+  archive { "/tmp/$sedutil_archive":
+    # This is really no better than an exec. Add file selection support to the archive module.
+    url             => "${sedutil_url}/${sedutil_archive}?raw=true",
+    extract         => true,
+    extract_path    => $sedutil_install_path,
+    extract_command => 'tar xvf %s sedutil/Release_x86_64/GNU-Linux/sedutil-cli --strip-components=3',
+    checksum_type   => 'sha256',
+    checksum        => '15b28d0441e7cfa2a317aca36d4360c93b6821ca9d026a5c4b50096d0b931a2e',
+    cleanup         => true,
+    creates         => "${sedutil_install_path}/sedutil-cli"
+  } ->
+
+  file { "${sedutil_install_path}/sedutil-cli":
+    mode => '0755'
+  }
+
+  # Disable sleep because it's not supported...
+  service { ['sleep.target', 'suspend.target', 'hybrid-sleep.target']:
+    provider => 'systemd',
+    enable   => 'mask'
+  }
 
 }
