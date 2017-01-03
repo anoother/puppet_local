@@ -38,24 +38,6 @@
 
 class opal {
 
-  ## None of this works :(
-
-  #$sysfs_allowtpm = '/sys/module/libata/parameters/allow_tpm'
-
-  #exec {"chmod 644 ${sysfs_allowtpm}":
-  #  unless   => "[ $(cat ${sysfs_allowtpm}) -eq 1 ]",
-  #  provider  => shell
-  #} ~>
-
-  #exec {"echo 1 > ${sysfs_allowtpm}":
-  #  provider    => shell,
-  #  refreshonly => true
-  #}
-
-  #file { '/etc/modprobe.d/tpm.conf':
-  #  content => "options libata allow_tpm=1\n"
-  #}
-
   file_line { 'allow_tpm':
     path => '/etc/default/grub',
     line => 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT libata.allow_tpm=1"'
@@ -83,10 +65,23 @@ class opal {
     mode => '0755'
   }
 
-  # Disable sleep because it's not supported...
-  service { ['sleep.target', 'suspend.target', 'hybrid-sleep.target']:
-    provider => 'systemd',
-    enable   => 'mask'
+  define systemd_mask() {
+    file { $name:
+      path   => "/etc/systemd/system/${name}",
+      ensure => 'link',
+      target => '/dev/null'
+    }
+  }
+
+  ## Disable sleep because it's not supported...
+  #systemd_mask { [
+  #  'sleep.target',
+  #  'suspend.target',
+  #  'hybrid-sleep.target'
+  #]: }
+
+  file { '/etc/polkit-1/localauthority/50-local.d/com.ubuntu.disable-suspend.pkla':
+    source => "puppet:///modules/${name}/com.ubuntu.disable-suspend.pkla"
   }
 
 }

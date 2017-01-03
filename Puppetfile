@@ -15,3 +15,5 @@ mod 'ahmad-desktop',
 mod 'ahmad-opal',
   :path => 'local_modules/ahmad-opal'
 
+mod 'ahmad-just_the_facts',
+  :git => 'https://github.com/anoother/ahmad-just_the_facts.git'

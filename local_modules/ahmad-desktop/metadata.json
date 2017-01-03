@@ -9,7 +9,9 @@
   "issues_url": "hahahahha",
   "dependencies": [
     {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
-    {"name":"puppetlabs-apt"}
+    {"name":"puppetlabs-apt"},
+    {"name":"thias-sysctl", "version_requirement":">= 1.0.6"},
+    {"name":"ahmad-just_the_facts", "version_requirement":">= 0.1.0"}
   ]
 }
 

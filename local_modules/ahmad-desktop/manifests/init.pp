@@ -6,6 +6,7 @@ class desktop {
   include desktop::gaming
   include desktop::google
   include desktop::hardware
+  include desktop::hibernate
   include desktop::packages
   include desktop::virtualbox
   include desktop::xorg
