@@ -35,4 +35,7 @@ class desktop::fix_ubuntu {
     enable   => false,
   }
 
+  # Firefox addon that stop multiprocess working
+  package { 'xul-ext-ubufox': ensure => absent }
+
 }

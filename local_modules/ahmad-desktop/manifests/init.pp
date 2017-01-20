@@ -8,6 +8,7 @@ class desktop {
   include desktop::hardware
   include desktop::hibernate
   include desktop::packages
+  include desktop::powersave
   include desktop::virtualbox
   include desktop::xorg
 

@@ -17,14 +17,19 @@ class desktop::virtualbox {
   package {[
     'virtualbox',
     'virtualbox-guest-additions-iso',
-    'virtualbox-guest-utils',
-    'virtualbox-guest-x11',
     'virtualbox-qt',
     'virtualbox-source',
     #'virtualbox-ext-pack', # Need to accept the license manually
   ]:
     ensure  => present,
     require => Exec['apt_update'],
+  }
+
+  package {[
+    'virtualbox-guest-utils',
+    'virtualbox-guest-x11',
+  ]:
+    ensure  => purged
   }
 
 }

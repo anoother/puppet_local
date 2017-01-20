@@ -5,7 +5,9 @@ class desktop::hibernate {
 
   # Not sure if this is necessary...
   file { '/etc/initramfs-tools/conf.d/resume':
-    content => "RESUME=${::swap_device}\n"
+    content => "RESUME=${::swap_device}\n",
+    owner  => 'root',
+    group  => 'root'
   } ~>
 
   exec { 'update-initramfs -u':
@@ -22,6 +24,12 @@ class desktop::hibernate {
     source => "puppet:///modules/${caller_module_name}/com.ubuntu.enable-hibernate.pkla"
   }
 
-  # Also stuff in /etc/systemd/logind.conf
+  file { '/etc/systemd/logind.conf':
+    source => "puppet:///modules/${caller_module_name}/logind.conf",
+    owner  => 'root',
+    group  => 'root'
+  } ~>
+
+  service {'logind': provider => 'systemd' }
 
 }

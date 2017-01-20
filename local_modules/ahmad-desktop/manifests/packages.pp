@@ -1,13 +1,13 @@
 class desktop::packages {
 
-  apt::ppa {
-    [
-      'ppa:audacity-team/daily',
-      'ppa:hda-me/qt5ct',
-      'ppa:pmjdebruijn/darktable-release',
-      'ppa:scribus/ppa',
-      'ppa:thomas-schiex/blender',
-    ]:
+  apt::ppa { [
+    'ppa:audacity-team/daily',
+    'ppa:hda-me/qt5ct',
+    'ppa:pmjdebruijn/darktable-release',
+    'ppa:scribus/ppa',
+    'ppa:thomas-schiex/blender',
+    'ppa:wereturtle/ppa'
+  ]: before =>  Exec['apt_update'], 
   }
 
   apt::source { 'steam':
@@ -22,6 +22,7 @@ class desktop::packages {
     key          => {
       'id' => 'BA1816EF8E75005FCF5E27A1F24AEA9FB05498B7',
     },
+      before =>  Exec['apt_update'], 
   }
 
   apt::source { 'nodesource':
@@ -51,7 +52,7 @@ class desktop::packages {
     }
   } ->
 
-  package {[
+  package { [
     'vivaldi-stable',
     'vivaldi-snapshot',
   ]:
@@ -59,8 +60,8 @@ class desktop::packages {
       require => Exec['apt_update'],
   }
 
-  package {
-    [
+  package { [
+      'acpi',
       'audacity',
       'blender',
       'build-essential',
@@ -68,16 +69,24 @@ class desktop::packages {
       'darktable',
       'dcfldd',
       'dzen2',
+      'ghostwriter',
       'gimp',
       'gimp-gmic',
       'git',
+      'gparted',
+      'gwenview',
+      'heimdall-flash-frontend',
       'herbstluftwm',
       'htop',
+      'kdenlive',
+      'kwrite',
       'libffi-dev',
       'libssl-dev',
       'libxml2-dev',
       'libxslt1-dev',
+      'links',
       'meld',
+      'mtp-tools',
       'network-manager-openconnect-gnome',
       'pandoc',
       'python-demjson', # jsonlint-py
@@ -98,6 +107,12 @@ class desktop::packages {
     ]:
       ensure  => present,
       require => Exec['apt_update'],
+  }
+
+  package { [
+    'gnome-screensaver' # Presents a second login screen on resume
+  ]:
+    ensure => absent
   }
 
 }
