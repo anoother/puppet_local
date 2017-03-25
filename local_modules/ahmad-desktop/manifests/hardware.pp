@@ -2,6 +2,7 @@ class desktop::hardware {
 
   package {
     [
+      'cpufrequtils',
       'hdparm',
       'sdparm',
       'smartmontools',

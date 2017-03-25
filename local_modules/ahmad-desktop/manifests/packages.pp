@@ -60,14 +60,29 @@ class desktop::packages {
       require => Exec['apt_update'],
   }
 
+  $pdf_packages = [
+    'libbatik-java',
+    'xpaint',
+    'texlive-pstricks',
+    'texlive-font-utils',
+    'libgxps-utils',
+    'mupdf-*',
+  ]
+  package { $pdf_packages:
+      ensure => present,
+      require => Exec['apt_update'],
+  }
+
   package { [
       'acpi',
       'audacity',
       'blender',
       'build-essential',
       'chromium-browser',
+      'cloc',
       'darktable',
       'dcfldd',
+      'ttf-dejavu-extra',
       'dzen2',
       'ghostwriter',
       'gimp',
@@ -78,23 +93,35 @@ class desktop::packages {
       'heimdall-flash-frontend',
       'herbstluftwm',
       'htop',
+      'inkscape',
+      'iotop',
+      'ipython',
       'kdenlive',
       'kwrite',
       'libffi-dev',
+      'libpq-dev',
       'libssl-dev',
       'libxml2-dev',
       'libxslt1-dev',
       'links',
+      'markdown',
       'meld',
+      'mercurial',
+      'mesa-utils', # For glxgears
       'mtp-tools',
       'network-manager-openconnect-gnome',
+      'nmap',
       'pandoc',
       'python-demjson', # jsonlint-py
       'python-dev',
       'puppet-lint',
+      'screen',
+      'scribus',
+      'sloccount',
       'stow',
       'texlive-fonts-recommended', # For pandoc
       'tig',
+      'tmux',
       'tree',
       'unison',
       'vagrant',
