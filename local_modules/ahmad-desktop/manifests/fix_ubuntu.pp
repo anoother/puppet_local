@@ -38,4 +38,8 @@ class desktop::fix_ubuntu {
   # Firefox addon that stop multiprocess working
   package { 'xul-ext-ubufox': ensure => absent }
 
+  # This lets keyboard shortcuts work in qt5 apps. Disables the ubuntu menu for them, though
+  # https://bugs.launchpad.net/ubuntu/+source/appmenu-qt5/+bug/1313248
+  package { 'appmenu-qt5': ensure => absent }
+
 }
