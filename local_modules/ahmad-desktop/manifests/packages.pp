@@ -84,6 +84,7 @@ class desktop::packages {
       'dcfldd',
       'ttf-dejavu-extra',
       'dzen2',
+      'fonts-font-awesome',
       'ghostwriter',
       'gimp',
       'gimp-gmic',
@@ -103,6 +104,8 @@ class desktop::packages {
       'libssl-dev',
       'libxml2-dev',
       'libxslt1-dev',
+      'libxcb-xinerama0-dev', # For lemonbar compilation
+      'libxcb-randr0-dev', # For lemonbar compilation
       'links',
       'markdown',
       'meld',
