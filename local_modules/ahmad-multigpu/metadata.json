@@ -1,0 +1,14 @@
+{
+  "name": "ahmad-multigpu",
+  "version": "0.1.0",
+  "author": "ahmad",
+  "summary": "Multi-GPU hackery",
+  "license": "Apache 2.0",
+  "source": "nopw",
+  "project_page": "nope",
+  "issues_url": "nope",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
