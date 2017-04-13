@@ -59,4 +59,15 @@ class multigpu {
     group  => 'root',
   }
 
+  service { 'multigpu':
+    enable    => true,
+    ensure    => running,
+    provider  => systemd,
+    subscribe => [
+      File['/etc/systemd/system/multigpu.service'],
+      File['/usr/local/sbin/multigpu.sh'],
+      File['/etc/multigpu.snippets'],
+    ],
+  }
+
 }
