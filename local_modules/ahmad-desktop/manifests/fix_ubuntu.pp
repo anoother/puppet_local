@@ -35,6 +35,9 @@ class desktop::fix_ubuntu {
     enable   => false,
   }
 
+  # Eats CPU for no gain
+  package { 'apt-xapian-index': ensure => absent }
+
   # Firefox addon that stop multiprocess working
   package { 'xul-ext-ubufox': ensure => absent }
 
