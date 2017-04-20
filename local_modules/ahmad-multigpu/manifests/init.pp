@@ -45,18 +45,27 @@ class multigpu {
     source => "puppet:///modules/${module_name}/multigpu.snippets.example",
     owner  => 'root',
     group  => 'root',
+    notify => Service['multigpu'],
   }
 
   file { '/usr/local/sbin/multigpu.sh':
     source => "puppet:///modules/${module_name}/multigpu.sh",
     owner  => 'root',
     group  => 'root',
+    notify => Service['multigpu'],
   }
 
   file { '/etc/systemd/system/multigpu.service':
     source => "puppet:///modules/${module_name}/multigpu.service",
     owner  => 'root',
     group  => 'root',
+    notify => Service['multigpu'],
+  }
+
+  service { 'multigpu':
+    enable   => true,
+    ensure   => running,
+    provider => systemd,
   }
 
 }
