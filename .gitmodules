@@ -1,6 +1,3 @@
-[submodule "templates"]
-	path = local_modules/ahmad-multigpu/x11-multigpu
-	url = https://github.com/anoother/x11-multigpu.git
-[submodule "local_modules/ahmad-multigpu/templates"]
+[submodule "local_modules/ahmad-multigpu/files"]
 	path = local_modules/ahmad-multigpu/files
-	url = https://github.com/anoother/x11-multigpu.git
+	url = git@github.com:anoother/x11-multigpu.git
