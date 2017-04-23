@@ -1,6 +1,7 @@
 class desktop {
 
   require apt
+  require udev
 
   include desktop::fix_ubuntu
   include desktop::gaming

@@ -16,8 +16,6 @@ class desktop::powersave {
     owner  => root,
     group  => root,
     mode   => 0644,
-  } ~>
-
-  exec { '/sbin/udevadm trigger': }
+  } ~> Class['udev::udevadm::trigger']
 
 }

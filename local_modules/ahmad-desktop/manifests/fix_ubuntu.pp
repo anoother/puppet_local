@@ -45,4 +45,11 @@ class desktop::fix_ubuntu {
   # https://bugs.launchpad.net/ubuntu/+source/appmenu-qt5/+bug/1313248
   package { 'appmenu-qt5': ensure => absent }
 
+  file { '/etc/udev/rules.d/70-u2f.rules':
+    source => "puppet:///modules/${caller_module_name}/80-powersave.rules",
+    owner  => root,
+    group  => root,
+    mode   => 0644,
+  } ~> Class['udev::udevadm::trigger']
+
 }
