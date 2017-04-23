@@ -48,8 +48,8 @@ class multigpu {
     notify => Service['multigpu'],
   }
 
-  file { '/usr/local/sbin/multigpu.sh':
-    source => "puppet:///modules/${module_name}/multigpu.sh",
+  file { '/usr/local/sbin/multigpu':
+    source => "puppet:///modules/${module_name}/multigpu",
     owner  => 'root',
     group  => 'root',
     notify => Service['multigpu'],
