@@ -54,10 +54,15 @@ require apt
       before =>  Exec['apt_update'], 
   } ->
 
+  apt::pin { 'nvidia':
+    originator => "NVIDIA",
+    priority   => 501,
+  } ->
+
   package {[
     'nvidia-375-dev',
-    'nvidia-cuda-toolkit',
-  ]: ensure => present
+    'cuda-8.0',
+  ]: ensure => latest
   }
 
 }
