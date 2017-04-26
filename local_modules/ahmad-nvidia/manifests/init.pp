@@ -61,7 +61,7 @@ require apt
 
   package {[
     'nvidia-375-dev',
-    'cuda-8.0',
+    'cuda',
   ]: ensure => latest
   }
 
