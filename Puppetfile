@@ -15,6 +15,9 @@ mod 'ahmad-desktop',
 mod 'ahmad-multigpu',
   :path => 'local_modules/ahmad-multigpu'
 
+mod 'ahmad-nvidia',
+  :path => 'local_modules/ahmad-nvidia'
+
 mod 'ahmad-opal',
   :path => 'local_modules/ahmad-opal'
 
