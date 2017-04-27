@@ -12,8 +12,8 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'ahmad-desktop',
   :path => 'local_modules/ahmad-desktop'
 
-mod 'ahmad-multigpu',
-  :path => 'local_modules/ahmad-multigpu'
+mod 'ahmad-autogpu',
+  :path => 'local_modules/ahmad-autogpu'
 
 mod 'ahmad-nvidia',
   :path => 'local_modules/ahmad-nvidia'

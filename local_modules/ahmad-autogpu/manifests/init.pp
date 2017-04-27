@@ -1,6 +1,6 @@
-# == Class: multigpu
+# == Class: autogpu
 #
-# Full description of class multigpu here.
+# Full description of class autogpu here.
 #
 # === Parameters
 #
@@ -23,7 +23,7 @@
 #
 # === Examples
 #
-#  class { 'multigpu':
+#  class { 'autogpu':
 #    servers => [ 'pool.ntp.org', 'ntp.local.company.com' ],
 #  }
 #
@@ -35,34 +35,50 @@
 #
 # Copyright 2017 Your name here, unless otherwise noted.
 #
-class multigpu {
+class autogpu {
+
+  file { '/etc/multigpu.snippets':
+    ensure => absent,
+  }
+  file { '/usr/local/sbin/multigpu':
+    ensure => absent,
+  }
+  service { 'multigpu':
+    ensure => stopped,
+  } ->
+  file { '/etc/systemd/system/multigpu.service':
+    ensure => absent,
+  } ->
+  file { '/etc/X11/xorg.conf.d/09-multigpu.conf':
+    ensure => absent,
+  }
 
   file { '/etc/X11/xorg.conf.d/01-amdgpu-pro-px.conf':
     ensure => absent,
   }
 
-  file { '/etc/multigpu.snippets':
-    source => "puppet:///modules/${module_name}/multigpu.snippets.example",
+  file { '/etc/autogpu.snippets':
+    source => "puppet:///modules/${module_name}/autogpu.snippets.example",
     owner  => 'root',
     group  => 'root',
-    notify => Service['multigpu'],
+    notify => Service['autogpu'],
   }
 
-  file { '/usr/local/sbin/multigpu':
-    source => "puppet:///modules/${module_name}/multigpu",
+  file { '/usr/local/sbin/autogpu':
+    source => "puppet:///modules/${module_name}/autogpu",
     owner  => 'root',
     group  => 'root',
-    notify => Service['multigpu'],
+    notify => Service['autogpu'],
   }
 
-  file { '/etc/systemd/system/multigpu.service':
-    source => "puppet:///modules/${module_name}/multigpu.service",
+  file { '/etc/systemd/system/autogpu.service':
+    source => "puppet:///modules/${module_name}/autogpu.service",
     owner  => 'root',
     group  => 'root',
-    notify => Service['multigpu'],
+    notify => Service['autogpu'],
   }
 
-  service { 'multigpu':
+  service { 'autogpu':
     enable   => true,
     ensure   => running,
     provider => systemd,

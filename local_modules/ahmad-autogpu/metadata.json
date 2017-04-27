@@ -1,5 +1,5 @@
 {
-  "name": "ahmad-multigpu",
+  "name": "ahmad-autogpu",
   "version": "0.1.0",
   "author": "ahmad",
   "summary": "Multi-GPU hackery",

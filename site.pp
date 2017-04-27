@@ -1,11 +1,11 @@
 node deskside {
-  include multigpu
+  include autogpu
   include nvidia
 }
 
 node shadow {
   include desktop
-  include multigpu
+  include autogpu
   include nvidia
   include opal
 }
