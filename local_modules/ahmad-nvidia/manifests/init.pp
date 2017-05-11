@@ -62,7 +62,14 @@ require apt
   package {[
     'nvidia-375-dev',
     'cuda',
-  ]: ensure => latest
+  ]: ensure => latest,
+  }
+
+  package { [
+    'nvidia-prime',
+    'bbswitch-dkms'
+  ]:
+    ensure => purged,
   }
 
 }
