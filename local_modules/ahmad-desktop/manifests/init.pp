@@ -10,6 +10,7 @@ class desktop {
   include desktop::hibernate
   include desktop::packages
   include desktop::powersave
+  include desktop::razer
   include desktop::remote
   include desktop::virtualbox
   include desktop::xorg
