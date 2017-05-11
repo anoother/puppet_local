@@ -46,7 +46,7 @@ class desktop::fix_ubuntu {
   package { 'appmenu-qt5': ensure => absent }
 
   file { '/etc/udev/rules.d/70-u2f.rules':
-    source => "puppet:///modules/${caller_module_name}/80-powersave.rules",
+    source => "puppet:///modules/${caller_module_name}/70-u2f.rules",
     owner  => root,
     group  => root,
     mode   => 0644,
