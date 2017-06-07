@@ -6,6 +6,7 @@ class desktop {
   include desktop::fix_ubuntu
   include desktop::gaming
   include desktop::google
+  include desktop::google_drive
   include desktop::hardware
   include desktop::hibernate
   include desktop::packages
