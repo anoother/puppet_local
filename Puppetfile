@@ -15,6 +15,12 @@ mod 'ahmad-desktop',
 mod 'ahmad-autogpu',
   :path => 'local_modules/ahmad-autogpu'
 
+mod 'ahmad-gvt',
+  :path => 'local_modules/ahmad-gvt'
+
+mod 'ahmad-initram',
+  :path => 'local_modules/ahmad-initram'
+
 mod 'ahmad-nvidia',
   :path => 'local_modules/ahmad-nvidia'
 

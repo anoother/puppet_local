@@ -1,5 +1,7 @@
 class desktop::hibernate {
 
+  include initram::update
+
   # Swap is used only for hibernate:
   sysctl { 'vm.swappiness': value => '0' }
 
@@ -7,11 +9,8 @@ class desktop::hibernate {
   file { '/etc/initramfs-tools/conf.d/resume':
     content => "RESUME=${::swap_device}\n",
     owner  => 'root',
-    group  => 'root'
-  } ~>
-
-  exec { 'update-initramfs -u':
-    provider => 'shell' # update-initramfs is a shell script
+    group  => 'root',
+    notify => Class['initram::update'],
   }
 
   #file_line { 'grub_resume':
