@@ -1,6 +1,7 @@
 node deskside {
   include autogpu
   include nvidia
+  include boinc
 }
 
 node shadow {
@@ -8,4 +9,5 @@ node shadow {
   include autogpu
   include nvidia
   include opal
+  include boinc
 }

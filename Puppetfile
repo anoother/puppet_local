@@ -21,5 +21,8 @@ mod 'ahmad-nvidia',
 mod 'ahmad-opal',
   :path => 'local_modules/ahmad-opal'
 
+mod 'ahmad-boinc',
+  :path => 'local_modules/ahmad-boinc'
+
 mod 'ahmad-just_the_facts',
   :git => 'https://github.com/anoother/ahmad-just_the_facts.git'
