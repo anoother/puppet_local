@@ -32,3 +32,6 @@ mod 'ahmad-boinc',
 
 mod 'ahmad-just_the_facts',
   :git => 'https://github.com/anoother/ahmad-just_the_facts.git'
+
+mod 'herculesteam-augeasproviders_grub',
+  :git => 'https://github.com/hercules-team/augeasproviders_grub.git'

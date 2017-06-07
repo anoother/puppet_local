@@ -1,0 +1,16 @@
+{
+  "name": "ahmad-gvt",
+  "version": "0.1.0",
+  "author": "ahmad",
+  "summary": "Enable Intel GVT-g graphics virtualization",
+  "license": "Apache 2.0",
+  "source": "nope",
+  "project_page": "nope",
+  "issues_url": "nope",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"ahmad-initram","version_requirement":">= 0.1.0"},
+    {"name":"herculesteam-augeasproviders_grub","version_requirement":">= 2.4.0"}
+  ]
+}
+
