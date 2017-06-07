@@ -85,6 +85,7 @@ class desktop::packages {
       'ttf-dejavu-extra',
       'dzen2',
       'fonts-font-awesome',
+      'fonts-sil-gentium*',
       'ghostwriter',
       'gimp',
       'gimp-gmic',
