@@ -76,6 +76,7 @@ class desktop::packages {
   package { [
       'acpi',
       'audacity',
+      'beignet', # For systems with Intel CPUs only
       'blender',
       'build-essential',
       'chromium-browser',
