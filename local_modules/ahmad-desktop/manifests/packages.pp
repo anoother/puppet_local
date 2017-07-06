@@ -38,6 +38,19 @@ class desktop::packages {
     },
   }
 
+  apt::source { 'sur5r-i3':
+    location => 'http://debian.sur5r.net/i3/',
+    repos    => 'universe',
+    release  => 'xenial',
+    include  => {
+      'deb' => true,
+      'src' => true,
+    },
+    key      => {
+      'id' => 'BFD90F4DAAEFA72B67BBAF48E3CA1A89941C42E6',
+    },
+  }
+
   #apt::source { 'vivaldi':
   #  location => 'http://repo.vivaldi.com/stable/deb',
   #  repos    => 'main',
@@ -82,6 +95,7 @@ class desktop::packages {
       'cloc',
       'darktable',
       'dcfldd',
+      'dmenu'
       'ttf-dejavu-extra',
       'dzen2',
       'fonts-font-awesome',
@@ -94,6 +108,7 @@ class desktop::packages {
       'heimdall-flash-frontend',
       'herbstluftwm',
       'htop',
+      'i3',
       'inkscape',
       'iotop',
       'ipython',
