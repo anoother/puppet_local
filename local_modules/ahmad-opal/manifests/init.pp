@@ -38,12 +38,7 @@
 
 class opal {
 
-  file_line { 'allow_tpm':
-    path => '/etc/default/grub',
-    line => 'GRUB_CMDLINE_LINUX_DEFAULT="$GRUB_CMDLINE_LINUX_DEFAULT libata.allow_tpm=1"'
-  } ~>
-  exec { '/usr/sbin/update-grub':  refreshonly => true } ~>
-  exec { '/usr/sbin/grub-install': refreshonly => true}
+  kernel_parameter { 'libata.allow_tpm': value => 1 }
 
   $sedutil_archive = 'sedutil_LINUX.tgz'
   $sedutil_url = 'https://github.com/Drive-Trust-Alliance/exec/blob/master'

@@ -35,3 +35,6 @@ mod 'ahmad-just_the_facts',
 
 mod 'herculesteam-augeasproviders_grub',
   :git => 'https://github.com/hercules-team/augeasproviders_grub.git'
+
+mod 'camptocamp-kmod',
+  :git => 'https://github.com/camptocamp/puppet-kmod.git'

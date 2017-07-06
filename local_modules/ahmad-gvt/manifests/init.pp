@@ -47,5 +47,15 @@ class gvt {
     'i915.enable_gvt',
     'kvm.ignore_msrs',
   ]: value => 1 }
+
+  package { [
+    'qemu-kvm',
+    'virt-manager',
+  ]: } ->
+
+  kmod::load { [
+    'vfio-pci',
+    'vfio-mdev',
+  ]: }
   
 }

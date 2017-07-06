@@ -86,6 +86,7 @@ class desktop::packages {
       'ttf-dejavu-extra',
       'dzen2',
       'fonts-font-awesome',
+      'fonts-droid-fallback',
       'fonts-sil-gentium*',
       'ghostwriter',
       'gimp',
@@ -117,6 +118,7 @@ class desktop::packages {
       'network-manager-openconnect-gnome',
       'nmap',
       'pandoc',
+      'playonlinux',
       'python-demjson', # jsonlint-py
       'python-dev',
       'puppet-lint',
