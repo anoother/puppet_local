@@ -1,6 +1,7 @@
 node deskside {
   include autogpu
   include nvidia
+  include opal
 }
 
 node shadow {
