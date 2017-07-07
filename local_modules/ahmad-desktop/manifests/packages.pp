@@ -98,9 +98,6 @@ class desktop::packages {
       'dcfldd',
       'dmenu',
       'dzen2',
-      'fonts-droid-fallback',
-      'fonts-font-awesome',
-      'fonts-sil-gentium*',
       'ghostwriter',
       'gimp',
       'gimp-gmic',
@@ -143,11 +140,9 @@ class desktop::packages {
       'sloccount',
       'stow',
       'stress',
-      'texlive-fonts-recommended', # For pandoc
       'tig',
       'tmux',
       'tree',
-      'ttf-dejavu-extra',
       'unison',
       'vagrant',
       'vagrant-lxc',
@@ -155,7 +150,6 @@ class desktop::packages {
       'virtualenvwrapper',
       'wkhtmltopdf', # For pandoc
       'xclip',
-      'xfonts-terminus',
       'xmonad',
     ]:
       ensure  => present,

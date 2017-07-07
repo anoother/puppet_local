@@ -4,6 +4,7 @@ class desktop {
   require udev
 
   include desktop::fix_ubuntu
+  include desktop::fonts
   include desktop::gaming
   include desktop::google
   include desktop::google_drive
