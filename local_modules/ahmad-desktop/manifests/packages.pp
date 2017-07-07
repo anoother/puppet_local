@@ -96,11 +96,10 @@ class desktop::packages {
       'cloc',
       'darktable',
       'dcfldd',
-      'dmenu'
-      'ttf-dejavu-extra',
+      'dmenu',
       'dzen2',
-      'fonts-font-awesome',
       'fonts-droid-fallback',
+      'fonts-font-awesome',
       'fonts-sil-gentium*',
       'ghostwriter',
       'gimp',
@@ -120,10 +119,10 @@ class desktop::packages {
       'libffi-dev',
       'libpq-dev',
       'libssl-dev',
+      'libxcb-randr0-dev', # For lemonbar compilation
+      'libxcb-xinerama0-dev', # For lemonbar compilation
       'libxml2-dev',
       'libxslt1-dev',
-      'libxcb-xinerama0-dev', # For lemonbar compilation
-      'libxcb-randr0-dev', # For lemonbar compilation
       'links',
       'markdown',
       'meld',
@@ -134,17 +133,21 @@ class desktop::packages {
       'nmap',
       'pandoc',
       'playonlinux',
+      'pnmixer',
+      'puppet-lint',
       'python-demjson', # jsonlint-py
       'python-dev',
-      'puppet-lint',
+      'sakura',
       'screen',
       'scribus',
       'sloccount',
       'stow',
+      'stress',
       'texlive-fonts-recommended', # For pandoc
       'tig',
       'tmux',
       'tree',
+      'ttf-dejavu-extra',
       'unison',
       'vagrant',
       'vagrant-lxc',
@@ -152,6 +155,7 @@ class desktop::packages {
       'virtualenvwrapper',
       'wkhtmltopdf', # For pandoc
       'xclip',
+      'xfonts-terminus',
       'xmonad',
     ]:
       ensure  => present,
