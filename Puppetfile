@@ -12,6 +12,9 @@ forge "https://forgeapi.puppetlabs.com"
 mod 'ahmad-desktop',
   :path => 'local_modules/ahmad-desktop'
 
+mod 'ahmad-laptop',
+  :path => 'local_modules/ahmad-laptop'
+
 mod 'ahmad-autogpu',
   :path => 'local_modules/ahmad-autogpu'
 

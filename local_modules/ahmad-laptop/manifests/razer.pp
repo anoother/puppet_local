@@ -1,4 +1,4 @@
-class desktop::razer {
+class laptop::razer {
 
   apt::ppa { [
     'ppa:terrz/razerutils',
