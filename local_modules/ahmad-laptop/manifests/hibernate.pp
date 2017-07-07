@@ -1,4 +1,4 @@
-class desktop::hibernate {
+class laptop::hibernate {
 
   include initram::update
 

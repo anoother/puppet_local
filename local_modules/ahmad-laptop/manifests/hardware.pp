@@ -1,4 +1,4 @@
-class desktop::hardware {
+class laptop::hardware {
 
   package {
     [

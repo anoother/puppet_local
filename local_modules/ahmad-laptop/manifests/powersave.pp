@@ -1,4 +1,4 @@
-class desktop::powersave {
+class laptop::powersave {
 
   sysctl { 'vm.laptop_mode': value => '5' }
 
