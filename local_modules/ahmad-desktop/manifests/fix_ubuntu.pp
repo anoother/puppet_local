@@ -28,11 +28,19 @@ class desktop::fix_ubuntu {
   # Remove Ubuntu Software Centre
   package { 'ubuntu-software': ensure => purged }
 
-  # Disable thermald
-  service { 'thermald':
-    provider => 'systemd',
-    ensure   => stopped,
-    enable   => false,
+  # Disable thermald on non-Intel CPUs
+  if 'Intel' in $::processor0 {
+    service { 'thermald':
+      provider => 'systemd',
+      ensure   => running,
+      enable   => true,
+    }
+  } else {
+    service { 'thermald':
+      provider => 'systemd',
+      ensure   => stopped,
+      enable   => false,
+    }
   }
 
   # Eats CPU for no gain
