@@ -3,6 +3,7 @@ class desktop::packages {
   apt::ppa { [
     'ppa:audacity-team/daily',
     'ppa:hda-me/qt5ct',
+    'ppa:obsproject/obs-studio',
     'ppa:pmjdebruijn/darktable-release',
     'ppa:scribus/ppa',
     'ppa:thomas-schiex/blender',
@@ -128,6 +129,7 @@ class desktop::packages {
       'mtp-tools',
       'network-manager-openconnect-gnome',
       'nmap',
+      'obs-studio',
       'pandoc',
       'pavucontrol',
       'playonlinux',
