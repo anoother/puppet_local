@@ -63,7 +63,7 @@ require apt
     'nvidia-375-dev',
     'cuda',
   ]: ensure => latest,
-  }
+  } ~>
 
   package { [
     'nvidia-prime',

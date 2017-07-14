@@ -71,6 +71,14 @@ class autogpu {
     notify => Service['autogpu'],
   }
 
+  file { '/usr/local/sbin/update-nvidia-alternatives':
+    source => "puppet:///modules/${module_name}/update-nvidia-alternatives",
+    owner  => 'root',
+    group  => 'root',
+    notify => Service['autogpu'],
+  }
+
+
   file { '/etc/systemd/system/autogpu.service':
     source => "puppet:///modules/${module_name}/autogpu.service",
     owner  => 'root',
