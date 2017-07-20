@@ -62,7 +62,7 @@ require apt
   package {[
     'nvidia-375-dev',
     'cuda',
-  ]: ensure => latest,
+  ]: ensure => present,
   } ~>
 
   package { [
