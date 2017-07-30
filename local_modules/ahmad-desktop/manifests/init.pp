@@ -8,6 +8,7 @@ class desktop {
   include desktop::gaming
   include desktop::google
   include desktop::google_drive
+  include desktop::nle
   include desktop::packages
   include desktop::remote
   include desktop::virtualbox

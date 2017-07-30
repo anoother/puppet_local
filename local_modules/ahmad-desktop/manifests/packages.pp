@@ -112,7 +112,6 @@ class desktop::packages {
       'inkscape',
       'iotop',
       'ipython',
-      'kdenlive',
       'kwrite',
       'libffi-dev',
       'libpq-dev',
