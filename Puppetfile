@@ -27,6 +27,9 @@ mod 'ahmad-initram',
 mod 'ahmad-nvidia',
   :path => 'local_modules/ahmad-nvidia'
 
+mod 'ahmad-vega',
+  :path => 'local_modules/ahmad-vega'
+
 mod 'ahmad-opal',
   :path => 'local_modules/ahmad-opal'
 

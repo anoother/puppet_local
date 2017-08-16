@@ -115,6 +115,7 @@ class desktop::packages {
       'kwrite',
       'libffi-dev',
       'libpq-dev',
+      'libqt4-dev',
       'libssl-dev',
       'libxcb-randr0-dev', # For lemonbar compilation
       'libxcb-xinerama0-dev', # For lemonbar compilation
@@ -136,6 +137,7 @@ class desktop::packages {
       'puppet-lint',
       'python-demjson', # jsonlint-py
       'python-dev',
+      'qt4-qmake',
       'sakura',
       'screen',
       'scribus',
