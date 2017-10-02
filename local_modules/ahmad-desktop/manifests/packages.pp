@@ -7,6 +7,7 @@ class desktop::packages {
     'ppa:pmjdebruijn/darktable-release',
     'ppa:scribus/ppa',
     'ppa:thomas-schiex/blender',
+    'ppa:ubuntu-mozilla-daily/ppa',
     'ppa:wereturtle/ppa'
   ]: before =>  Exec['apt_update'], 
   }
@@ -99,6 +100,9 @@ class desktop::packages {
       'dcfldd',
       'dmenu',
       'dzen2',
+      'firefox-trunk',
+      'firefox-trunk-globalmenu',
+      'firefox-trunk-locale-en',
       'ghostwriter',
       'gimp',
       'gimp-gmic',

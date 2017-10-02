@@ -60,8 +60,9 @@ require apt
   } ->
 
   package {[
-    'nvidia-375-dev',
-    'cuda',
+    'nvidia-384-dev',
+    'cuda-9-0',
+    'cuda-toolkit-9-0',
   ]: ensure => present,
   } ~>
 
