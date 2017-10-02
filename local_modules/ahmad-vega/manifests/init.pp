@@ -25,24 +25,11 @@ require apt
 
   apt::ppa { 'ppa:paulo-miguel-dias/mesa':
     before =>  Exec['apt_update'], 
-  } #->
+  } ->
 
-  #apt::pin { 'nvidia':
-  #  originator => "NVIDIA",
-  #  priority   => 501,
-  #} ->
-
-  #package {[
-  #  'nvidia-375-dev',
-  #  'cuda',
-  #]: ensure => present,
-  #} ~>
-
-  #package { [
-  #  'nvidia-prime',
-  #  'bbswitch-dkms'
-  #]:
-  #  ensure => purged,
-  #}
+  package {[
+    'xserver-xorg-core-hwe-16.04'
+  ]: ensure => purged,
+  }
 
 }

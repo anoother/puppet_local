@@ -11,6 +11,7 @@ class laptop::hardware {
       'linux-tools-common',
       'lm-sensors',
       'powertop',
+      'xserver-xorg-video-intel',
     ]: ensure => present
   }
 
