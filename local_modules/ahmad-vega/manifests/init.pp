@@ -24,12 +24,25 @@ require apt
   }
 
   apt::ppa { 'ppa:paulo-miguel-dias/mesa':
-    before =>  Exec['apt_update'], 
-  } ->
-
-  package {[
-    'xserver-xorg-core-hwe-16.04'
-  ]: ensure => purged,
+    ensure => absent,
+    before =>  Exec['apt_update'],
   }
+
+  apt::ppa { 'ppa:oibaf/graphics-drivers':
+    before =>  Exec['apt_update'],
+  }
+
+  package { 'xserver-xorg-core-hwe-16.04':
+    ensure  => purged,
+    require => Apt::Ppa['ppa:oibaf/graphics-drivers'],
+  }
+
+  package { [
+    'xserver-xorg-video-amdgpu',
+  ]:
+    ensure  => present,
+    require => Apt::Ppa['ppa:oibaf/graphics-drivers'],
+  }
+
 
 }
