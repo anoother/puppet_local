@@ -11,7 +11,7 @@ node shadow {
   include laptop
   include autogpu
   include gvt
-  include nvidia
+  include vega
   include opal
   include boinc
 }
