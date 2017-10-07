@@ -51,7 +51,7 @@ require apt
       'id'  => 'AE09FE4BBD223A84B2CCFCE3F60F4B3D7FA2AF80',
       'url' => 'http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/7fa2af80.pub',
     },
-      before =>  Exec['apt_update'], 
+      before =>  Exec['apt_update'],
   } ->
 
   apt::pin { 'nvidia':
@@ -72,5 +72,32 @@ require apt
   ]:
     ensure => purged,
   }
+
+  ## Need to be cleverer about the following... only if we have docker, etc etc.
+
+  define nvidia_github_repo {
+    apt::source { "nvidia-$title":
+      location     => "https://nvidia.github.io/$title/ubuntu16.04/amd64",
+      repos        => '/',
+      release      => ' ',
+      include      => {
+        'deb' => true,
+        'src' => false,
+      },
+      key           => {
+        'id'     => 'C95B321B61E88C1809C4F759DDCAE044F796ECB0',
+        'source' => 'https://nvidia.github.io/nvidia-docker/gpgkey',
+      },
+        before =>  Exec['apt_update'],
+    }
+  }
+
+  nvidia_github_repo { [
+    'libnvidia-container',
+    'nvidia-container-runtime',
+    'nvidia-docker',
+  ]: } ->
+
+  package { 'nvidia-docker2': ensure => present, }
 
 }

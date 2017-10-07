@@ -20,11 +20,23 @@ class desktop::docker {
     priority   => 501,
   } ->
 
-  package {[
-    'docker-ce',
-  ]:
+  package { 'docker-ce':
     ensure  => present,
     require => Exec['apt_update'],
   }
+
+  package { [
+    'docker',
+    'docker.io',
+  ]:
+    ensure => purged,
+  }
+
+  #file { [
+  #  '/etc/apparmor.d/tunables/home',
+  #  '/etc/apparmor.d/tunables/proc',
+  #]:
+  #    ensure => present,
+  #}
 
 }
