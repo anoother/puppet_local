@@ -1,3 +1,10 @@
+clone:
+  git:
+    image: plugins/git
+    recursive: true
+    submodule_override:
+      local_modules/ahmad-autogpu/files: https://github.com/anoother/x11-autogpu.git
+
 pipeline:
   build:
     image: dyre/puppet-lint
