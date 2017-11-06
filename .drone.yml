@@ -1,0 +1,5 @@
+pipeline:
+  build:
+    image: dyre/puppet-lint
+    commands:
+      - puppet-lint .
