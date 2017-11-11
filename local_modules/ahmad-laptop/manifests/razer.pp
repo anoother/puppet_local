@@ -2,6 +2,12 @@ class laptop::razer {
 
   apt::ppa { [
     'ppa:terrz/razerutils',
+  ]:
+    ensure => absent,
+    before => Exec['apt_update'],
+  }
+
+  apt::ppa { [
     'ppa:lah7/polychromatic',
   ]:
     before => Exec['apt_update'],
