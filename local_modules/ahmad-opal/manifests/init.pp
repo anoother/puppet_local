@@ -51,7 +51,7 @@ class opal {
     extract_path    => $sedutil_install_path,
     extract_command => 'tar xvf %s sedutil/Release_x86_64/GNU-Linux/sedutil-cli --strip-components=3',
     checksum_type   => 'sha256',
-    checksum        => '15b28d0441e7cfa2a317aca36d4360c93b6821ca9d026a5c4b50096d0b931a2e',
+    checksum        => '0461fe0c696008d55c96a8873ef490e8d1f6de6e1979ae42aaa7bfc2493698f5',
     cleanup         => true,
     creates         => "${sedutil_install_path}/sedutil-cli"
   } ->
