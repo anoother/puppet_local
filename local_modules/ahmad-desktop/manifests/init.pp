@@ -3,6 +3,7 @@ class desktop {
   require apt
   require udev
 
+  include desktop::audio
   include desktop::docker
   include desktop::fix_ubuntu
   include desktop::fonts
