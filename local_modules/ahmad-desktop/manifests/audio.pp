@@ -14,4 +14,11 @@ class desktop::audio {
     mode    => 0644,
   } ~> Class['udev::udevadm::trigger']
 
+  file { '/etc/X11/xorg.conf.d/55-gsx1000_input.conf':
+    # Disable volume control as it's messy
+    source => "puppet:///modules/${caller_module_name}/55-gsx1000_input.conf",
+    owner  => 'root',
+    group  => 'root',
+  }
+
 }
