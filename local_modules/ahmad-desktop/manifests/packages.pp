@@ -8,7 +8,8 @@ class desktop::packages {
     'ppa:scribus/ppa',
     'ppa:thomas-schiex/blender',
     'ppa:ubuntu-mozilla-daily/ppa',
-    'ppa:wereturtle/ppa'
+    'ppa:wereturtle/ppa',
+    'ppa:jon-hedgerows/get-iplayer',
   ]: before =>  Exec['apt_update'], 
   }
 
@@ -103,6 +104,7 @@ class desktop::packages {
       'firefox-trunk',
       'firefox-trunk-globalmenu',
       'firefox-trunk-locale-en',
+      'get-iplayer',
       'ghostwriter',
       'gimp',
       'gimp-gmic',
