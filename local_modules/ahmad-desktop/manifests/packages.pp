@@ -1,6 +1,8 @@
 class desktop::packages {
 
   apt::ppa { [
+    'ppa:freecad-maintainers/freecad-stable',
+    'ppa:freecad-maintainers/freecad-daily',
     'ppa:audacity-team/daily',
     'ppa:hda-me/qt5ct',
     'ppa:obsproject/obs-studio',
@@ -10,6 +12,7 @@ class desktop::packages {
     'ppa:ubuntu-mozilla-daily/ppa',
     'ppa:wereturtle/ppa',
     'ppa:jon-hedgerows/get-iplayer',
+    'ppa:ethereum/ethereum',
   ]: before =>  Exec['apt_update'], 
   }
 

@@ -39,9 +39,57 @@ require apt
   } ->
 
   package { [
+    'atmi',
     'compute-firmware',
+    'cxlactivitylogger',
+    'hcc',
+    'hcfft',
+    'hip_base',
+    'hip_doc',
+    'hip_hcc',
+    #'hip_nvcc',
+    'hip_samples',
+    'hipblas',
+    'hsa-amd-aqlprofile',
+    'hsa-ext-rocr-dev',
+    'hsa-rocr-dev',
+    'hsakmt-roct',
+    'hsakmt-roct-dev',
+    #'miopen-hip',
+    'miopen-opencl',
+    'miopengemm',
+    'rocblas',
+    'rock-dkms',
+    'rocm-clang-ocl',
+    'rocm-dev',
+    'rocm-device-libs',
+    'rocm-dkms',
+    'rocm-libs',
+    'rocm-opencl',
+    'rocm-opencl-dev',
+    'rocm-profiler',
+    'rocm-smi',
+    'rocm-utils',
+    'rocminfo',
+    'rocrand',
   ]:
     ensure  => present,
+  }
+
+  file { '/etc/profile.d/rocm.sh':
+    content => 'export PATH="$PATH:/opt/rocm/bin"',
+  }
+
+  file { '/usr/share/libdrm':
+     ensure => directory,
+  }
+  file { '/usr/share/libdrm/amdgpu.ids':
+    source => "puppet:///modules/${module_name}/amdgpu.ids",
+  }
+
+  kernel_parameter { 'amdgpu.vm_fragment_size':
+    value    => '9',
+    bootmode => 'default',
   }
 
 }

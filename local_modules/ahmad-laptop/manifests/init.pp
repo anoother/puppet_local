@@ -6,6 +6,6 @@ class laptop {
   include laptop::hardware
   include laptop::hibernate
   include laptop::powersave
-  include laptop::razer
+  #include laptop::razer
 
 }
