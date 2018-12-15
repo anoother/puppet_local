@@ -3,7 +3,7 @@ class desktop::virtualbox {
   apt::source { 'virtualbox':
     location => 'http://download.virtualbox.org/virtualbox/debian',
     repos    => 'contrib',
-    release  => 'xenial',
+    release  => 'bionic',
     include  => {
       'deb' => true,
       'src' => false,

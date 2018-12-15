@@ -25,7 +25,7 @@ require apt
   apt::source { 'rocm':
     location     => 'http://repo.radeon.com/rocm/apt/debian/',
     repos        => 'main',
-    release      => 'xenial',
+    release      => 'bionic',
     architecture => 'amd64',
     include      => {
       'deb' => true,
@@ -83,9 +83,10 @@ require apt
   file { '/usr/share/libdrm':
      ensure => directory,
   }
-  file { '/usr/share/libdrm/amdgpu.ids':
-    source => "puppet:///modules/${module_name}/amdgpu.ids",
-  }
+  ## TODO: make this version-dependent on whether the ID we want is there...
+  #file { '/usr/share/libdrm/amdgpu.ids':
+  #  source => "puppet:///modules/${module_name}/amdgpu.ids",
+  #}
 
   kernel_parameter { 'amdgpu.vm_fragment_size':
     value    => '9',

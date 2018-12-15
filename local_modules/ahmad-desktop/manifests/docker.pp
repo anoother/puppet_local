@@ -3,7 +3,7 @@ class desktop::docker {
   apt::source { 'docker':
     location     => 'https://download.docker.com/linux/ubuntu',
     repos        => 'stable',
-    release      => 'xenial',
+    release      => 'bionic',
     architecture => 'amd64',
     include      => {
       'deb' => true,

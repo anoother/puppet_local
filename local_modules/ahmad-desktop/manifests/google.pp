@@ -16,7 +16,7 @@ class desktop::google {
     }
   }
 
-  google_apt_source { ['chrome', 'chrome-remote-desktop', ]: } ->
+  desktop::google::google_apt_source { ['chrome', 'chrome-remote-desktop', ]: } ->
 
   package {
     [

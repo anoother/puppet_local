@@ -10,6 +10,9 @@ class desktop::fix_ubuntu {
     force  => true,
   }
 
+  # Make this conditional on 18.04+
+  package { 'ubuntu-unity-desktop': }
+
   # Disable DNS proxy
   file_line { 'disable_dns_proxy':
     path   => '/etc/NetworkManager/NetworkManager.conf',
@@ -60,7 +63,7 @@ class desktop::fix_ubuntu {
     source => "puppet:///modules/${caller_module_name}/70-u2f.rules",
     owner  => root,
     group  => root,
-    mode   => 0644,
+    mode   => '0644',
   } ~> Class['udev::udevadm::trigger']
 
 }

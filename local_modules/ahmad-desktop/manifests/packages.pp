@@ -32,9 +32,9 @@ class desktop::packages {
   }
 
   apt::source { 'nodesource':
-    location => 'https://deb.nodesource.com/node_5.x/',
+    location => 'https://deb.nodesource.com/node_11.x/',
     repos    => 'main',
-    release  => 'xenial',
+    release  => 'bionic',
     include  => {
       'deb' => true,
       'src' => true,
@@ -44,18 +44,18 @@ class desktop::packages {
     },
   }
 
-  apt::source { 'sur5r-i3':
-    location => 'http://debian.sur5r.net/i3/',
-    repos    => 'universe',
-    release  => 'xenial',
-    include  => {
-      'deb' => true,
-      'src' => true,
-    },
-    key      => {
-      'id' => 'BFD90F4DAAEFA72B67BBAF48E3CA1A89941C42E6',
-    },
-  }
+  #apt::source { 'sur5r-i3':
+  #  location => 'http://debian.sur5r.net/i3/',
+  #  repos    => 'universe',
+  #  release  => 'bionic',
+  #  include  => {
+  #    'deb' => true,
+  #    'src' => true,
+  #  },
+  #  key      => {
+  #    'id' => 'baa43dbbd7232ea2b5444cae238d53bebb9d34601cc000e82f11111b1889078a',
+  #  },
+  #}
 
   #apt::source { 'vivaldi':
   #  location => 'http://repo.vivaldi.com/stable/deb',

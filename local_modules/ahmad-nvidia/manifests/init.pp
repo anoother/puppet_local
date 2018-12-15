@@ -77,7 +77,7 @@ require apt
 
   define nvidia_github_repo {
     apt::source { "nvidia-$title":
-      location     => "https://nvidia.github.io/$title/ubuntu16.04/amd64",
+      location     => "https://nvidia.github.io/$title/ubuntu18.04/amd64",
       repos        => '/',
       release      => ' ',
       include      => {

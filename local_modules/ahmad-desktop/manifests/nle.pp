@@ -10,7 +10,7 @@ class desktop::nle {
   apt::source { 'lumiera':
     location => 'http://lumiera.org/debian/',
     repos    => 'experimental',
-    release  => 'xenial',
+    release  => 'bionic',
     include  => {
       'deb' => true,
       'src' => true,
