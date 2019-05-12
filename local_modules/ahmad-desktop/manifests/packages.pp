@@ -1,9 +1,13 @@
 class desktop::packages {
 
   apt::ppa { [
+    'ppa:audacity-team/daily',
+  ]: ensure => absent,
+  } ->
+
+  apt::ppa { [
     'ppa:freecad-maintainers/freecad-stable',
     'ppa:freecad-maintainers/freecad-daily',
-    'ppa:audacity-team/daily',
     'ppa:hda-me/qt5ct',
     'ppa:obsproject/obs-studio',
     'ppa:pmjdebruijn/darktable-release',
@@ -13,6 +17,8 @@ class desktop::packages {
     'ppa:wereturtle/ppa',
     'ppa:jon-hedgerows/get-iplayer',
     'ppa:ethereum/ethereum',
+    'ppa:deadsnakes/ppa',
+    'ppa:openscad/releases',
   ]: before =>  Exec['apt_update'], 
   }
 
@@ -114,6 +120,7 @@ class desktop::packages {
       'git',
       'gparted',
       'gwenview',
+      'haskell-stack',
       'heimdall-flash-frontend',
       'herbstluftwm',
       'htop',
@@ -123,11 +130,13 @@ class desktop::packages {
       'ipython',
       'kwrite',
       'libffi-dev',
+      'libghc-dbus-dev', # For xmonad w/ polybar
       'libpq-dev',
       'libqt4-dev',
       'libssl-dev',
       'libxcb-randr0-dev', # For lemonbar compilation
       'libxcb-xinerama0-dev', # For lemonbar compilation
+      'libxm4', # For realsoft3d
       'libxml2-dev',
       'libxslt1-dev',
       'links',
@@ -144,9 +153,11 @@ class desktop::packages {
       'playonlinux',
       'pnmixer',
       'puppet-lint',
+      'python3.7-*',
       'python-demjson', # jsonlint-py
       'python-dev',
       'qt4-qmake',
+      'openscad',
       'sakura',
       'screen',
       'scribus',

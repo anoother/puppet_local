@@ -19,4 +19,10 @@ class desktop::xorg {
     group  => 'root',
   }
 
+  file { '/etc/udev/rules.d/91-solaar.rules':
+    source => "puppet:///modules/${caller_module_name}/91-solaar.rules",
+    owner  => 'root',
+    group  => 'root',
+  }
+
 }

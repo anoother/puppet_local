@@ -6,6 +6,8 @@ class desktop::fonts {
       'fonts-sil-gentium*',
       'texlive-fonts-recommended', # For pandoc
       'ttf-dejavu-extra',
+      'unifont',
+      'xfonts-jmk',
       'xfonts-terminus',
     ]:
       ensure  => present,
